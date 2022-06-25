@@ -17,6 +17,8 @@ class MainActivity : AppCompatActivity() {
 
         btnSubmit.setOnClickListener {
             val intent = Intent(this, AnotherActivity::class.java)
+                .apply { putExtra("Key1", "Value1") } // adding and passing extra info
+            intent.putExtra("Key2", true) // another way to add pass extra info
             startActivity(intent)
         }
     }
