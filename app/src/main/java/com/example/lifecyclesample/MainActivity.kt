@@ -1,8 +1,10 @@
 package com.example.lifecyclesample
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -10,6 +12,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         Log.e("onCreate method", "is called...")
+
+        val btnSubmit = findViewById<Button>(R.id.btn_submit)
+
+        btnSubmit.setOnClickListener {
+            val intent = Intent(this, AnotherActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onStart() {
